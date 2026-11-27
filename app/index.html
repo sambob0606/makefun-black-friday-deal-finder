@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DealLedger — Black Friday 2026 deals, checked by hand</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">DL</span>
+    <div>
+      <h1>DealLedger</h1>
+      <p>Black Friday 2026 deals, checked by hand</p>
+    </div>
+  </div>
+  <p class="checked-line" id="checkedLine"></p>
+</header>
+
+<section class="hero">
+  <h2>Real deals first. Inflated “was” prices called out.</h2>
+  <p>Every deal below was found and price-checked on Black Friday morning. Each card shows the sale price, the usual price, the store link, when the price was checked, where it was read, and an honest verdict on whether the discount is real.</p>
+  <div class="stats" id="stats"></div>
+</section>
+
+<section class="controls" aria-label="Search and filters">
+  <label class="search-box">
+    <span>Search deals</span>
+    <input id="searchInput" type="search" placeholder="Try “Sony”, “OLED”, “Kindle”…" autocomplete="off">
+  </label>
+  <label>
+    <span>Category</span>
+    <select id="categorySelect"></select>
+  </label>
+  <label>
+    <span>Store</span>
+    <select id="storeSelect"></select>
+  </label>
+  <label>
+    <span>Minimum discount</span>
+    <select id="discountSelect">
+      <option value="0">Any discount</option>
+      <option value="20">20% or more</option>
+      <option value="40">40% or more</option>
+      <option value="50">50% or more</option>
+    </select>
+  </label>
+  <label>
+    <span>Sort by</span>
+    <select id="sortSelect">
+      <option value="verdict">Best verdict first</option>
+      <option value="discount">Biggest discount</option>
+      <option value="saving">Biggest saving ($)</option>
+      <option value="price">Lowest price</option>
+    </select>
+  </label>
+</section>
+
+<p class="result-count" id="resultCount" role="status"></p>
+<main id="dealGrid" class="deal-grid"></main>
+<section id="detailView" class="detail-view" hidden></section>
+
+<footer class="footer">
+  <p>Prices can change or sell out after the check time shown on each card. Always confirm the price at the store before checkout.</p>
+  <p>Verdicts: <strong>True low</strong> = lowest price seen. <strong>Strong price</strong> = well under the usual selling price. <strong>Routine / repeated sale</strong> = the same cut runs outside Black Friday. <strong>Inflated usual</strong> = the “was” price flatters the discount.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
